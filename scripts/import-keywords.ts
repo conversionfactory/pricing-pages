@@ -207,7 +207,7 @@ function extractBrand(keyword: string): string | null {
 
   if (!kw.includes("pricing")) return null
 
-  let brand = kw
+  const brand = kw
     .replace(/\s*pricing\s*page\s*/g, " ")
     .replace(/\s*pricing\s*/g, " ")
     .trim()

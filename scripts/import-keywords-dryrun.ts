@@ -118,7 +118,7 @@ function extractBrand(keyword: string): string | null {
   const kw = keyword.toLowerCase().trim()
   for (const p of SKIP_PATTERNS) { if (p.test(kw)) return null }
   if (!kw.includes("pricing")) return null
-  let brand = kw.replace(/\s*pricing\s*page\s*/g, " ").replace(/\s*pricing\s*/g, " ").trim()
+  const brand = kw.replace(/\s*pricing\s*page\s*/g, " ").replace(/\s*pricing\s*/g, " ").trim()
   if (!brand || brand.length < 2) return null
   const alias = BRAND_ALIASES[brand]
   if (alias) return alias

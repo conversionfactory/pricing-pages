@@ -4,7 +4,7 @@ config({ path: ".env.local" })
 import { neon } from "@neondatabase/serverless"
 import { drizzle } from "drizzle-orm/neon-http"
 import { companies } from "../src/lib/schema"
-import { eq, inArray } from "drizzle-orm"
+import { inArray } from "drizzle-orm"
 import fs from "fs"
 import path from "path"
 
