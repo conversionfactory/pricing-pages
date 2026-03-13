@@ -1,4 +1,11 @@
-import { pgTable, uuid, text, timestamp, integer } from "drizzle-orm/pg-core"
+import { pgTable, uuid, text, timestamp, integer, pgEnum } from "drizzle-orm/pg-core"
+
+export const applicationStatus = pgEnum("application_status", [
+  "new",
+  "reviewing",
+  "accepted",
+  "declined",
+])
 
 export const applications = pgTable("applications", {
   id: uuid("id").defaultRandom().primaryKey(),
@@ -8,7 +15,8 @@ export const applications = pgTable("applications", {
   pricingPageUrl: text("pricing_page_url").notNull(),
   platform: text("platform"),
   goal: text("goal"),
-  status: text("status").notNull().default("new"),
+  ipAddress: text("ip_address"),
+  status: applicationStatus("status").notNull().default("new"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 })
 

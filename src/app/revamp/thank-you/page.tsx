@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { redirect } from "next/navigation"
 import { CheckCircle2 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -7,7 +8,17 @@ export const metadata: Metadata = {
   robots: { index: false },
 }
 
-export default function ThankYouPage() {
+type Props = {
+  searchParams: Promise<{ submitted?: string }>
+}
+
+export default async function ThankYouPage({ searchParams }: Props) {
+  const { submitted } = await searchParams
+
+  if (submitted !== "1") {
+    redirect("/revamp/apply")
+  }
+
   return (
     <div className="mx-auto max-w-lg px-4 py-24 sm:px-6 lg:px-8 text-center">
       <CheckCircle2 className="mx-auto h-12 w-12 text-muted-foreground" />
@@ -26,12 +37,12 @@ export default function ThankYouPage() {
             Jump on a 30-minute call to walk through your current page and our
             initial thoughts.
           </p>
-          <a
-            href="#"
-            className="mt-4 block rounded-lg border px-4 py-2.5 text-center text-sm font-medium transition-colors hover:bg-muted"
+          <button
+            disabled
+            className="mt-4 w-full cursor-not-allowed rounded-lg border px-4 py-2.5 text-center text-sm font-medium opacity-40"
           >
             Schedule a call →
-          </a>
+          </button>
           <p className="mt-2 text-center text-xs text-muted-foreground">
             Calendly link coming soon
           </p>
@@ -44,12 +55,12 @@ export default function ThankYouPage() {
             Skip the call and pay now. We&apos;ll kick off as soon as payment is
             confirmed.
           </p>
-          <a
-            href="#"
-            className="mt-4 block rounded-lg bg-primary-foreground px-4 py-2.5 text-center text-sm font-medium text-primary transition-opacity hover:opacity-90"
+          <button
+            disabled
+            className="mt-4 w-full cursor-not-allowed rounded-lg bg-primary-foreground px-4 py-2.5 text-center text-sm font-medium text-primary opacity-40"
           >
             Pay $3,000 →
-          </a>
+          </button>
           <p className="mt-2 text-center text-xs opacity-60">
             Stripe checkout coming soon
           </p>

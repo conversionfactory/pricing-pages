@@ -2,17 +2,7 @@
 
 import { useActionState } from "react"
 import { submitApplication } from "@/actions/submit-application"
-
-const PLATFORMS = [
-  "Next.js",
-  "Webflow",
-  "Framer",
-  "WordPress",
-  "Shopify",
-  "Squarespace",
-  "Custom HTML/CSS",
-  "Other",
-]
+import { PLATFORMS } from "@/lib/constants"
 
 export function ApplicationForm() {
   const [state, action, isPending] = useActionState(submitApplication, null)
@@ -119,6 +109,7 @@ export function ApplicationForm() {
           id="goal"
           name="goal"
           rows={4}
+          maxLength={2000}
           className="w-full rounded-lg border bg-background px-3 py-2 text-sm outline-none ring-ring/50 placeholder:text-muted-foreground focus:ring-2 disabled:opacity-50"
           placeholder="e.g. We're getting traffic but very few trial signups. We think our pricing structure is confusing…"
           disabled={isPending}

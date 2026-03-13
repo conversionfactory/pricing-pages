@@ -3,6 +3,7 @@ import Link from "next/link"
 import {
   Search,
   PenLine,
+  Layers,
   Palette,
   Code2,
   FlaskConical,
@@ -24,7 +25,7 @@ const DELIVERABLES = [
       "A full teardown of your current page — what's hurting conversions, what's working, and exactly what needs to change.",
   },
   {
-    icon: PenLine,
+    icon: Layers,
     title: "Pricing Strategy",
     description:
       "Tier structure, naming, positioning, and anchoring — engineered to guide visitors toward the right plan.",
