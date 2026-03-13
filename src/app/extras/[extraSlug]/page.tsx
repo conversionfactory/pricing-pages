@@ -6,6 +6,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { PageHeader } from "@/components/page-header"
 import { CompanyGrid } from "@/components/company-grid"
 import { JsonLd } from "@/components/json-ld"
+import { RevampCta } from "@/components/revamp-cta"
 
 type Props = {
   params: Promise<{ extraSlug: string }>
@@ -91,6 +92,13 @@ export default async function ExtraPage({ params }: Props) {
         </div>
         <div className="mt-8">
           <CompanyGrid companies={companies} />
+        </div>
+        <div className="mt-12">
+          <RevampCta
+            variant="banner"
+            heading={`Want ${meta.name} on your pricing page?`}
+            body="We add it — strategy, copy, design, and implementation all included."
+          />
         </div>
       </div>
     </>

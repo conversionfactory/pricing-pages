@@ -5,13 +5,26 @@ export function SiteFooter() {
   return (
     <footer className="border-t bg-muted/40">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="lg:col-span-2">
             <h3 className="text-sm font-semibold">PricingPages.com</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               A curated directory of SaaS pricing page examples with screenshots
               and analysis.
             </p>
+            <div className="mt-4">
+              <h4 className="text-sm font-semibold">Services</h4>
+              <ul className="mt-2 space-y-1">
+                <li>
+                  <Link
+                    href="/revamp"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    Pricing Page Revamp
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div>

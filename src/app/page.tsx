@@ -4,6 +4,7 @@ import { FEATURES, EXTRAS, TIER_COUNTS, TIER_LABELS } from "@/lib/tags"
 import { CompanyGrid } from "@/components/company-grid"
 import { PageHeader } from "@/components/page-header"
 import { JsonLd } from "@/components/json-ld"
+import { RevampCta } from "@/components/revamp-cta"
 
 export default async function HomePage() {
   const companies = await getAllCompanies()
@@ -84,6 +85,11 @@ export default async function HomePage() {
                 ))}
               </ul>
             </div>
+
+            <RevampCta
+              heading="Is your pricing page converting?"
+              body="We rebuild SaaS pricing pages from the ground up — strategy, copy, design, and implementation."
+            />
           </aside>
         </div>
       </div>
