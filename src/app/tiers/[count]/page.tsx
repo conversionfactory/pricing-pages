@@ -6,6 +6,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { PageHeader } from "@/components/page-header"
 import { CompanyGrid } from "@/components/company-grid"
 import { JsonLd } from "@/components/json-ld"
+import { RevampCta } from "@/components/revamp-cta"
 
 type Props = {
   params: Promise<{ count: string }>
@@ -95,6 +96,13 @@ export default async function TierPage({ params }: Props) {
         </div>
         <div className="mt-8">
           <CompanyGrid companies={companies} />
+        </div>
+        <div className="mt-12">
+          <RevampCta
+            variant="banner"
+            heading="Not sure how many tiers are right for your product?"
+            body="We'll figure it out — pricing strategy, tier structure, copy, design, and implementation all included."
+          />
         </div>
       </div>
     </>

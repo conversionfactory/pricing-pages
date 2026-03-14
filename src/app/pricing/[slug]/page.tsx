@@ -8,6 +8,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { TagBadge } from "@/components/tag-badge"
 import { RelatedPages } from "@/components/related-pages"
 import { JsonLd } from "@/components/json-ld"
+import { RevampCta } from "@/components/revamp-cta"
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -203,6 +204,11 @@ export default async function CompanyPage({ params }: Props) {
                 </p>
               </div>
             )}
+
+            <RevampCta
+              heading="Want a pricing page like this for your product?"
+              body="We handle strategy, copy, design, and implementation — built on insights from hundreds of real SaaS pricing pages."
+            />
           </div>
         </div>
 

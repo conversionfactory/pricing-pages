@@ -26,6 +26,12 @@ export function SiteHeader() {
           >
             Tiers
           </Link>
+          <Link
+            href="/revamp"
+            className="rounded-md border px-3 py-1.5 font-medium transition-colors hover:bg-muted"
+          >
+            Get a Revamp
+          </Link>
         </nav>
       </div>
     </header>
