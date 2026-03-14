@@ -55,7 +55,7 @@ export async function submitApplication(
   })
 
   if (!result.success) {
-    const firstError = result.error.errors[0]
+    const firstError = result.error.issues[0]
     return { error: firstError?.message ?? "Please check the form and try again." }
   }
 
